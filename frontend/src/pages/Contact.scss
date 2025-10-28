@@ -256,5 +256,40 @@
         }
     }
 
+    .contact-map {
+        width: 80%;
+        margin: 4rem 0;
+        
+        .map-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            
+            h2 {
+                font-size: 2.5rem;
+                color: #2E7D32;
+                margin-bottom: 1rem;
+            }
+
+        }
+        
+        .map-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            
+            &:hover {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+                transform: translateY(-4px);
+            }
+            
+            iframe {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
 
 }

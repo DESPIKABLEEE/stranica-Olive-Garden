@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
+import scrollStore from '../stores/ScrollStore'
 
-const NavBar = () => {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [scrolled])
-
+const NavBar = observer(() => {
   return (
-    <nav className={`nav-bar ${scrolled ? 'scrolled' : ''}`} role="navigation">
+    <nav className={`nav-bar ${scrollStore.scrolled ? 'scrolled' : ''}`} role="navigation">
       <div className="nav-logo">
         <Link to="/">
           <img src="../../public/slike/logo-copy.png" alt="Olive Garden Logo" />
@@ -30,6 +18,6 @@ const NavBar = () => {
       </ul>
     </nav>
   )
-}
+})
 
 export default NavBar
