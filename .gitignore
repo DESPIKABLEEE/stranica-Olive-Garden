@@ -83,3 +83,4 @@ jspm_packages/
 
 # Specific ignored files
 frontend/public/slike/10439f81-dab1-4d65-8461-f9ba27cf784c.JPG
+.config/

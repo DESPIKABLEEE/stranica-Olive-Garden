@@ -3,7 +3,8 @@ import React from 'react'
 import './Home.scss'
 import Carousel from './pages/carousel.jsx'// zasto trazi malo c
 import './pages/embla.scss'
-import { LetterCircleP, WifiHigh, Snowflake, PawPrint, TelevisionSimple, Fire, SwimmingPool, Clock, Check, Bed, WashingMachine } from "@phosphor-icons/react";
+import NavBar from './components/NavBar'
+import { LetterCircleP, WifiHigh, Snowflake, PawPrint, TelevisionSimple, Fire, SwimmingPool, Clock, Check, Bed, WashingMachine, GooglePhotosLogo } from "@phosphor-icons/react";
 const OPTIONS = { loop: true }
 const SLIDES = [
   '/slike/slike_za_galeriju/eksterijer/IMG_4619.JPG',
@@ -17,15 +18,25 @@ const Home = () => {
   return (
     <>
         <div className='wrapper'>
-            <div className="nav-bar">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Galerija</a></li>
-                    <li><a href="">Kontakt</a></li>
-                </ul>
-            </div>
-            <div className="hero">
+                <NavBar />
+            {/* STARI HERO */}
+            {/* <div className="hero">
                 <h1>Olive garden</h1>
+            </div> */}
+            <div className="hero">
+                <div className='hero-left'>
+                    <div className="hero-content">
+                        <h1>OLIVE GARDEN</h1>
+                        <p className="hero-subtitle">Vaša oaza udaljena od buke grada</p>
+                    </div>
+                </div>
+                <div className="hero-right">
+                    <div className="hero-up"></div>
+                    <div className="hero-down"><a href=""><GooglePhotosLogo size={24} />Galerija</a></div>
+                </div>
+            </div>
+            <div className="scroll-indicator">
+                <span>Skrolaj dolje</span>
             </div>
             <div className="about-us">
                 <h1>About us</h1>
@@ -40,9 +51,7 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className="carousel-pages">
-                <Carousel slides={SLIDES} options={OPTIONS} />
-            </div>
+            
             <div className='content'>
                 <div className='content-naslov'>
                     <h3>Sadržaj</h3>
@@ -82,6 +91,58 @@ const Home = () => {
                     <div className='four'><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, porro ut perferendis tempora odit tenetur officiis. Ipsam at nihil esse, maxime praesentium provident, quae magni doloribus, repudiandae fuga nam quibusdam deleniti rerum ea laboriosam dolor quam distinctio placeat id dolore?</p></div>
                 </div>
             </div>
+
+            <div className="pet">
+                <div className="pet-left">
+                    <div className="left-text">
+                        <h2>Oko zivotinja</h2>
+                        <div className="green-line"></div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo delectus quis laboriosam, impedit omnis eaque cum?<br/> <br/> Quas aperiam placeat sequi omnis a rem dolor ea dolores voluptates perferendis ab corporis velit magnam delectus amet, aliquid quia quasi iusto quibusdam. Est a aut quod distinctio magnam recusandae quae itaque impedit modi.</p>
+                    </div>
+                </div>
+                <div className="pet-right">
+
+                </div>
+            </div>
+
+            <div className="carousel-pages">
+                <Carousel slides={SLIDES} options={OPTIONS} />
+            </div>
+
+            <footer className="footer">
+                <div className="footer-content">
+                    {/* <div className="footer-section">
+                        <h3>O Nama</h3>
+                        <p>Olive Garden je mirna oaza udaljena od buke grada, idealna za opuštanje i uživanje u prirodi. Naša vikendnica nudi savršen ambijent za obitelj i prijatelje.</p>
+                    </div> */}
+                    
+                    <div className="footer-section">
+                        <h3>Informacije</h3>
+                        <ul>
+                            <li><a href="">Pravila kuće</a></li>
+                            <li><a href="">Politika privatnosti</a></li>
+                            <li><a href="">Uvjeti korištenja</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div className="footer-section">
+                        <h3>Kontakt</h3>
+                        <p>Email: info@olivegarden.hr</p>
+                        <p>Telefon: +385 1 234 5678</p>
+                        <p>Adresa: Olive Garden, Priroda 123, HR-10000</p>
+                    </div>
+
+                    <div className="footer-section">
+                        <h3>Pratite nas</h3>
+                        <p>Facebook | Instagram | Twitter</p>
+                    </div>
+                </div>
+
+                <div className="footer-bottom">
+                    <p>&copy; 2025 Olive Garden. Sva prava zadržana.</p>
+                </div>
+            </footer>
 
         </div>
     </>
