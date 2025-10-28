@@ -1,6 +1,7 @@
 import React from 'react'
 import './Contact.scss'
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 import '../Home.scss'
 import { HouseSimple, Phone, At } from "@phosphor-icons/react";
 
@@ -22,11 +23,7 @@ const Contact = () => {
 
             <div className='contact-text'>
               <p>
-                Dobrodošli u Olive Garden - vašu oazu mira u srcu mediteranske prirode. 
-                Naša vikendica nudi savršenu kombinaciju luksuza i privatnosti, idealna za 
-                nezaboravan odmor sa porodicom ili prijateljima. Smještena u mirnom okruženju, 
-                daleko od gradske buke, pruža vam priliku da se potpuno opustite i uživate u 
-                prirodnim ljepotama koje vas okružuju.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur doloribus nisi quo, nesciunt odio aperiam dolore vitae asperiores, optio aliquid voluptas temporibus corporis quas. Blanditiis incidunt saepe magni corrupti sint, molestias, veniam cum molestiae praesentium ad sit eius deserunt accusantium.
               </p>
 
               <div className='contact-info-cards'>
@@ -46,7 +43,7 @@ const Contact = () => {
                   </div>
                   <div className='info-content'>
                     <h4>Telefon</h4>
-                    <p>+385 91 234 5678<br/>Dostupni 9:00 - 21:00</p>
+                    <p>+385 00 000 0000<br/>Dostupni 9:00 - 21:00</p>
                   </div>
                 </div>
 
@@ -56,7 +53,7 @@ const Contact = () => {
                   </div>
                   <div className='info-content'>
                     <h4>E-mail</h4>
-                    <p>info@olivegarden.hr<br/>booking@olivegarden.hr</p>
+                    <p>info.olivegarden@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -91,12 +88,12 @@ const Contact = () => {
             
             <div className='form-group'>
               <label htmlFor="email">E-mail *</label>
-              <input type="email" id="email" name="email" placeholder="vas.email@primjer.com" required />
+              <input type="email" id="email" name="email" placeholder="vas email..." required />
             </div>
             
             <div className='form-group'>
               <label htmlFor="phone">Broj telefona</label>
-              <input type="tel" id="phone" name="phone" placeholder="+387 XX XXX XXX" />
+              <input type="tel" id="phone" name="phone" placeholder="+387 00 000 0000" />
             </div>
             
             <div className='form-group'>
@@ -109,6 +106,7 @@ const Contact = () => {
         </div>
 
       </div>
+      <Footer />
       </div>
       
     </>

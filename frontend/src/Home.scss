@@ -41,32 +41,85 @@ button, .accent {
     flex-direction: column;
 
     .nav-bar{
-        background-color: $accent-brown;
-        opacity: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: transparent;
         color: $text-light;
         width: 100vw;
-        // flex-basis: 40%;
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
         align-items: center;
-        border-bottom: #333 solid 3px;
-        position: sticky; // da ostane na vrhu
-        min-height: 4rem;
-        ul{
+        border-bottom: none;
+        min-height: 6rem;
+        padding: 0 3rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(0px);
+
+        .nav-logo {
             display: flex;
-            gap: 7rem;
-            list-style: none;
-            padding-right: 5rem;
+            align-items: center;
+            
+            a {
+                display: flex;
+                align-items: center;
+                text-shadow: none;
+                
+                img {
+                    height: 7rem;
+                    width: auto;
+                    transition: all 0.3s ease;
+                    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+                    
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
         }
 
-        a{
+        &.scrolled {
+            background-color: $beige-bg;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            min-height: 6rem;
+
+            .nav-logo img {
+                height: 6rem;
+            }
+
+            ul a {
+                color: $text-dark;
+                text-shadow: none;
+
+                &:hover {
+                    color: $primary-green;
+                }
+            }
+        }
+        
+        ul{
+            display: flex;
+            gap: 10rem;
+            list-style: none;
+            padding-right: 5rem;
+            margin: 0;
+        }
+
+        ul a{
             color: $text-light;
             cursor: pointer;
             text-decoration: none;
             font-size: 1.1rem;
-        }
-        a:hover{
-            color: $text-dark;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            
+            &:hover{
+                color: rgba(255, 255, 255, 0.8);
+            }
         }
     }
 
@@ -321,7 +374,9 @@ button, .accent {
 
     .jhin{
         // margin: 2rem;
-        min-height: 100vh;
+        margin-top: 2rem;
+        min-height: 80vh;
+        height: 80vh;
         width: 65%;
         display: flex;
         flex-direction: column;
@@ -340,6 +395,7 @@ button, .accent {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex-basis: 65%;
             .one{
                 // background-color: red;
                 flex-basis: 40%;
@@ -375,6 +431,7 @@ button, .accent {
             background-color: rgba($accent-brown, 0.08);
             padding: 2rem;
             border-radius: 8px;
+            flex-basis: 35%;
             .three{
                 // background-color: blue;
                 flex-basis: 43%;
@@ -460,46 +517,24 @@ button, .accent {
         padding: 3rem 0 1rem 0;
         // margin-top: 3rem;
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 2rem;
-            padding: 0 2rem;
-
-            .footer-section {
-                h3 {
-                    font-size: 1.2rem;
-                    margin-bottom: 1rem;
-                    color: $primary-green;
-                    border-bottom: 2px solid $primary-green;
-                    padding-bottom: 0.5rem;
-                }
-
-                p {
-                    font-size: 0.95rem;
-                    line-height: 1.6;
-                    margin-bottom: 0.5rem;
-                }
-
+        .footer-section{
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                list-style: none;
+                
                 ul {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-
-                    li {
-                        margin-bottom: 0.75rem;
-
-                        a {
-                            color: $text-light;
-                            text-decoration: none;
-                            transition: color 0.3s ease;
-
-                            &:hover {
-                                color: $primary-green;
-                            }
-                        }
+                    position: relative;
+                    padding: 0 1.5rem;
+                    
+                    &:not(:last-child)::after {
+                        content: '|';
+                        position: absolute;
+                        right: -1rem;
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 1.2rem;
                     }
                 }
             }
