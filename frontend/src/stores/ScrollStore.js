@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx'
 
 class ScrollStore {
   scrolled = false
+  mobileMenuOpen = false
 
   constructor() {
     makeAutoObservable(this)
@@ -20,6 +21,14 @@ class ScrollStore {
 
   setScrolled(value) {
     this.scrolled = value
+  }
+
+  toggleMobileMenu = () => {
+    this.mobileMenuOpen = !this.mobileMenuOpen
+  }
+
+  closeMobileMenu = () => {
+    this.mobileMenuOpen = false
   }
 
   dispose() {

@@ -1,5 +1,6 @@
 // rafce !!!
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Home.scss'
 import Carousel from './pages/carousel.jsx'// zasto trazi malo c
 import './pages/embla.scss'
@@ -33,7 +34,8 @@ const Home = () => {
                 </div>
                 <div className="hero-right">
                     <div className="hero-up"></div>
-                    <div className="hero-down"><a href=""><GooglePhotosLogo size={24} />Galerija</a></div>
+                    <div className="hero-down"><Link to="/galerija"><GooglePhotosLogo size={24} />Galerija</Link>
+                    </div>
                 </div>
             </div>
             {/* <div className="scroll-indicator">
@@ -109,7 +111,7 @@ const Home = () => {
             <div className="carousel-pages">
                 <Carousel slides={SLIDES} options={OPTIONS} />
             </div>
-            <Footer />
+            <Footer/>
             {/* <footer className="footer">
                 <div className="footer-section">
                     <li>
